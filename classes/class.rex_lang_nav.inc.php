@@ -2,6 +2,7 @@
 
 class rex_lang_nav {
 	protected $ulId;
+	protected $ulClass;
 	protected $selectedClass;
 	protected $showLiIds;
 	protected $hideLiIfOfflineArticle;
@@ -10,6 +11,7 @@ class rex_lang_nav {
 
 	public function __construct() {
 		$this->ulId = '';
+		$this->ulClass = '';
 		$this->selectedClass = 'selected';
 		$this->showLiIds = false;
 		$this->hideLiIfOfflineArticle = false;
@@ -17,7 +19,11 @@ class rex_lang_nav {
 		$this->upperCaseLinkText = false;
 	}
 
-	public function setUlId($ulId) {
+	public function setUlClass($ulClass) {
+		$this->ulClass = $ulClass;
+	}
+	
+		public function setUlId($ulId) {
 		$this->ulId = $ulId;
 	}
 
@@ -49,6 +55,11 @@ class rex_lang_nav {
 			$ulIdAttribute = '';
 		} else {
 			$ulIdAttribute = ' id="' . $this->ulId . '"';
+		}
+		
+		// ul class
+		if ($this->ulClass != '') {
+			$ulIdAttribute .= ' class="' . $this->ulClass . '"';	
 		}
 
 		$out = '<ul' . $ulIdAttribute . '>';
