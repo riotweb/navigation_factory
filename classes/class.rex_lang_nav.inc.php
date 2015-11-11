@@ -23,7 +23,7 @@ class rex_lang_nav {
 		$this->ulClass = $ulClass;
 	}
 	
-		public function setUlId($ulId) {
+	public function setUlId($ulId) {
 		$this->ulId = $ulId;
 	}
 
