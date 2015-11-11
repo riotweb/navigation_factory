@@ -19,12 +19,12 @@ class rex_lang_nav {
 		$this->upperCaseLinkText = false;
 	}
 
-	public function setUlClass($ulClass) {
-		$this->ulClass = $ulClass;
-	}
-	
 	public function setUlId($ulId) {
 		$this->ulId = $ulId;
+	}
+	
+	public function setUlClass($ulClass) {
+		$this->ulClass = $ulClass;
 	}
 
 	public function setSelectedClass($selectedClass) {
