@@ -12,7 +12,7 @@ class rex_nav {
 	protected $liClass;
 	protected $liIdFromMetaField;
 	protected $liClassFromMetaField;
-	protected $linkFromUserFunc;
+	protected $customLinkFunction;
 	protected $hideIds;
 	protected $liIdFromCategoryId;
 	protected $liClassFromCategoryId;
@@ -35,7 +35,7 @@ class rex_nav {
 		$this->liClass = '';
 		$this->liIdFromMetaField = '';
 		$this->liClassFromMetaField = '';
-		$this->linkFromUserFunc = '';
+		$this->customLinkFunction = '';
 		$this->hideIds = array();
 		$this->liIdFromCategoryId = array();
 		$this->liClassFromCategoryId = array();
@@ -97,8 +97,8 @@ class rex_nav {
 		$this->liClassFromMetaField = $liClassFromMetaField;
 	}
 
-	public function setCustomLink($linkFromUserFunc) {
-		$this->linkFromUserFunc = $linkFromUserFunc;
+	public function setCustomLink($customLinkFunction) {
+		$this->customLinkFunction = $customLinkFunction;
 	}
 
 	public function setHideIds($hideIds) {
@@ -195,8 +195,8 @@ class rex_nav {
 
 					$return .= '<li' . $idAttribute . $classAttribute . '>';
 
-					if ($this->linkFromUserFunc != '') {
-						$defaultLink = call_user_func($this->linkFromUserFunc, $cat, $depth);
+					if ($this->customLinkFunction != '') {
+						$defaultLink = call_user_func($this->customLinkFunction, $cat, $depth);
 					} else {
 						$defaultLink = '<a href="' . $cat->getUrl() . '">' . htmlspecialchars($cat->getName()) . '</a>';
 					}
