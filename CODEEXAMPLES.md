@@ -8,7 +8,7 @@ Ausgabe des 1. Navigationslevels
 $nav = new rex_nav();
 
 $nav->setStartLevel(1); // startet bei level 1
-$nav->setLevelDepth(1); // 1 level tief
+$nav->setLevelDepth(1); // 1 level tief vom start level aus
 
 echo $nav->getNavigation();
 
@@ -21,7 +21,7 @@ Ausgabe des 2. und 3. Navigationslevels
 $nav = new rex_nav();
 
 $nav->setStartLevel(2); // startet bei level 2
-$nav->setLevelDepth(2); // 2 level tief
+$nav->setLevelDepth(2); // 2 level tief vom start level aus
 
 echo $nav->getNavigation();
 ```
@@ -33,7 +33,7 @@ Ausgabe der Navigation mit Startkategorie-Id = 42
 $nav = new rex_nav();
 
 $nav->setStartCategoryId(42); // startet bei kategorie id = 42
-$nav->setLevelDepth(2); // 2 level tief
+$nav->setLevelDepth(1); // 1 level tief von start kategorie aus
 
 echo $nav->getNavigation();
 ```
@@ -58,8 +58,8 @@ $nav->setUlClass("sf-menu", 0); // erste ul klasse "sf-menu"
 $nav->setLiClass("list-item"); // li klasse "list-item"
 $nav->setLiIdFromMetaField("cat_css_id"); // li id aus metainfo feld: "cat_css_id"
 $nav->setLiClassFromMetaField("cat_css_class"); // li klasse aus metainfo feld: "cat_css_class"
-$nav->setLiIdFromCategoryId(array(42 => "foo", 43 => "bar")); // li id anhand artikel id
-$nav->setLiClassFromCategoryId(array(42 => "my-class")); // li klasse anhand artikel id
+$nav->setLiIdFromCategoryId(array(42 => "foo", 108 => "bar")); // li id anhand artikel id
+$nav->setLiClassFromCategoryId(array(42 => "the-class")); // li klasse anhand artikel id
 $nav->setCustomLink(function($cat, $depth) { // php funktion die den link zurückgibt (hier als beispiel: erste ebene ohne verlinkung)
     if ($depth == 1) {
         return htmlspecialchars($cat->getName());
@@ -75,7 +75,7 @@ Ausgabe einer einfachen Sprachnavigation
 ----------------------------------------
 
 ```php
-$nav = new rex_lang_nav();
+$langNav = new rex_lang_nav();
 
 $nav->setUlId("lang-nav"); // ul id: "lang-nav"
 $nav->setUlClass("my-lang-class"); // ul class: "my-lang-class"
@@ -85,18 +85,18 @@ $nav->sethideLiIfOfflineArticle(false); // bei einem offline artikel li nicht ve
 $nav->setuseLangCodeAsLinkText(true); // langcode anstelle sprachname als linktext ausgeben
 $nav->setupperCaseLinkText(true); // linktext in großbuchstaben anzeigen
 
-echo $nav->getNavigation();
+echo $langNav->getNavigation();
 ```
 
 Ausgabe einer Breadcrumb Navigation
 -----------------------------------
 
 ```php
-$nav = new rex_breadcrumb_nav();
+$breadcrumbNav = new rex_breadcrumb_nav();
 
 $nav->setCssClass("breadcrumb"); // ul klasse: "breadcrumb"
 $nav->setOlList(false); // es wird eine ul liste ausgegeben
 $nav->setStartArticleName("<i class='fa fa-home'></i>"); // ausgabe mit font-awesome icon
 
-echo $nav->getNavigation();
+echo $breadcrumbNav->getNavigation();
 ```
