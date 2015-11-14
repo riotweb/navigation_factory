@@ -5,6 +5,10 @@ $subpage = rex_request('subpage', 'string');
 $chapter = rex_request('chapter', 'string');
 $func = rex_request('func', 'string');
 
+if ($chapter == '') {
+	$chapter = '';
+}
+
 // include markdwon parser
 if (!class_exists('Parsedown')) {
 	require($REX['INCLUDE_PATH'] . '/addons/navigation_factory/classes/class.parsedown.inc.php');
@@ -14,6 +18,7 @@ if (!class_exists('Parsedown')) {
 $chapterpages = array (
 	'' => array($I18N->msg('navigation_factory_help_chapter_readme'), 'pages/help/readme.inc.php'),
 	'changelog' => array($I18N->msg('navigation_factory_help_chapter_changelog'), 'pages/help/changelog.inc.php'),
+	'codeexamples' => array($I18N->msg('navigation_factory_help_chapter_codeexamples'), 'pages/help/codeexamples.inc.php'),
 	'license' => array($I18N->msg('navigation_factory_help_chapter_license'), 'pages/help/license.inc.php'),
 );
 

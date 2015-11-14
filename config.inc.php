@@ -33,10 +33,7 @@ rex_navigation_factory_utils::includeSettingsFile();
 if ($REX['REDAXO']) {
 	// add subpages
 	$REX['ADDON']['navigation_factory']['SUBPAGES'] = array(
-		array('', $I18N->msg('navigation_factory_start')),
-		array('settings', $I18N->msg('navigation_factory_settings')),
-		array('setup', $I18N->msg('navigation_factory_setup')),
-		array('help', $I18N->msg('navigation_factory_help'))
+		array('', $I18N->msg('navigation_factory_help'))
 	);
 
 	// add css/js files to page header

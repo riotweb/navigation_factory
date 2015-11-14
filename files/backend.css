@@ -1,6 +1,8 @@
 a.extern,
 #rex-page-navigation-factory #subpage-help a[href^="http://"],
-#rex-page-navigation-factory #subpage-help a[href^="https://"] {
+#rex-page-navigation-factory #subpage-help a[href^="https://"],
+#rex-page-navigation-factory #subpage- a[href^="http://"],
+#rex-page-navigation-factory #subpage- a[href^="https://"] {
 	background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAA8CAYAAACq76C9AAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAFFSURBVHjaYtTpO/CfAQcACCAmBjwAIIAY//9HaNTtP4hiCkAAMeGSAAGAAGJCl7hcaM8IYwMEEBMuCRAACCAmXBIgABBAKA5CBwABhNcrAAGEVxIggPBKAgQQXkmAAMIrCRBAeCUBAgivJEAA4ZUECCC8kgABhFcSIIDwSgIEEF5JgADCKwkQQHglAQIIryRAAOGVBAggvJIAAYRXEiCA8EoCBBBeSYAAwisJEEB4JQECiAVbNoABgADCqxMggPDmMoAAwpvLAAIIby4DCCC8uQwggPDmMoAAwpvLAAIIr1cAAgivJEAA4ZUECCC8kgABhFcSIIDwSgIEEF5JgADCKwkQQHglAQIIryRAAOGVBAggvJIAAYRXEiCA8EoCBBBeSYAAwisJEEB4JQECCK8kQADhlQQIILySAAGEVxIggPBKAgQYAARTLlfrU5G2AAAAAElFTkSuQmCC) no-repeat right 3px;
 	padding-right: 10px;
 }
@@ -15,15 +17,18 @@ a.extern,
 	margin-bottom: 7px;
 }
 
-#rex-page-navigation-factory #subpage-help a.rex-active {
+#rex-page-navigation-factory #subpage-help a.rex-active,
+#rex-page-navigation-factory #subpage- a.rex-active {
     color: #14568A;
 }
 
-#rex-page-navigation-factory #subpage-help div.rex-addon-content {
+#rex-page-navigation-factory #subpage-help div.rex-addon-content,
+#rex-page-navigation-factory #subpage- div.rex-addon-content {
     padding: 10px 12px;
 }
 
-#rex-page-navigation-factory #subpage-help div.rex-addon-content ul {
+#rex-page-navigation-factory #subpage-help div.rex-addon-content ul,
+#rex-page-navigation-factory #subpage- div.rex-addon-content ul {
 	margin-top: 0;
 }
 

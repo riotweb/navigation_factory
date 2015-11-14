@@ -167,6 +167,8 @@ class rex_navigation_factory_utils {
 			$md = str_replace($search, $replace, $md);
 			$md = self::makeHeadlinePretty($md);
 
+			$md = str_replace('```php', "```php\r\n<?php", $md);
+
 			if (method_exists('Parsedown', 'set_breaks_enabled')) {
 				$out = Parsedown::instance()->set_breaks_enabled($setBreaksEnabled)->parse($md);
 			} elseif (method_exists('Parsedown', 'setBreaksEnabled')) {
@@ -174,6 +176,8 @@ class rex_navigation_factory_utils {
 			} else {
 				$out = Parsedown::instance()->parse($md);
 			}
+
+			$out = str_replace('&lt;?php<br />', "", $out);
 
 			return $out;
 		} else {

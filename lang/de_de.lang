@@ -11,6 +11,7 @@ navigation_factory_start_example_link_external = Externer Beispiellink
 
 navigation_factory_help_chapter_readme = Readme
 navigation_factory_help_chapter_changelog = Changelog
+navigation_factory_help_chapter_codeexamples = Codebeispiele
 navigation_factory_help_chapter_license = Lizenz
 
 navigation_factory_setup_step1 = Schritt 1: Mach dies
