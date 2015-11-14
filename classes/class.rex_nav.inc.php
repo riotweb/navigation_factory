@@ -56,7 +56,11 @@ class rex_nav {
 
 		$navPath = explode('|', ('0|0' . $REX['ART'][$REX['ARTICLE_ID']]['path'][$REX['CUR_CLANG']] . $REX['ARTICLE_ID'] . '|'));
 
-		$this->startCategoryId = $navPath[$startLevel];
+		if (isset($navPath[$startLevel]) && $navPath[$startLevel] != '') {
+			$this->startCategoryId = $navPath[$startLevel];
+		} else {
+			$this->startCategoryId = -1;
+		}
 	}
 
 	public function setLevelDepth($levelDepth) {
@@ -124,7 +128,9 @@ class rex_nav {
 
 		static $depth = 0;
 		
-		if ($categoryId < 1) {
+		if ($categoryId < 0) {
+			return '';
+		} elseif ($categoryId < 1) {
 			$cats = OOCategory::getRootCategories($this->ignoreOfflines);
 		} else {
 			$cats = OOCategory::getChildrenById($categoryId, $this->ignoreOfflines);

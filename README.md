@@ -13,8 +13,8 @@ Features
 * Es wird zuerst eine nackte Ul-Liste ohne Klassen oder Ids ausgegeben
 * Artikel (z.B. Home) können ausgeblendet werden
 * Einstellen der CSS-Klasse für selektierte Menüpunkte (z.B. `current`)
-* Jede UL kann eine Klasse und/oder ID zugewiesen bekommen (Suckerfish/Superfish)
-* Angabe von MetaInfo Felder aus denen Klassen und IDs für die Li's herausgezogen werden
+* Jede UL kann eine Klasse und/oder Id zugewiesen bekommen (Suckerfish/Superfish)
+* Angabe von MetaInfo Felder aus denen Klassen und Ids für die Li's herausgezogen werden
 * Aufruf einer benutzerdef. PHP-Funktion möglich, die den Inhalt der Li's zurückgibt
 * Unterstützung für alle URL-Typen von SEO42
 * Reagiert automatisch auf gesperrte Artikel etc. bei installiertem Community AddOn
