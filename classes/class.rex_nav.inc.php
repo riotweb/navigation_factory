@@ -1,6 +1,7 @@
 <?php
 
 class rex_nav {
+	protected $startCategoryId;
 	protected $levelDepth;
 	protected $showAll;
 	protected $ignoreOfflines;
@@ -24,6 +25,7 @@ class rex_nav {
 	var $current_category_id = -1;
 
 	public function __construct() {
+		$this->startCategoryId = 0;
 		$this->levelDepth = 3;
 		$this->showAll = false;
 		$this->ignoreOfflines = true;
@@ -41,16 +43,20 @@ class rex_nav {
 		$this->liClassFromCategoryId = array();
 	}
 
-	public function getNavigationByLevel($levelStart = 0) {
-		global $REX;
-		
-		$navPath = explode('|', ('0' . $REX['ART'][$REX['ARTICLE_ID']]['path'][$REX['CUR_CLANG']] . $REX['ARTICLE_ID'] . '|'));
-
-		return $this->get($navPath[$levelStart]);
+	public function getNavigation() {
+		return $this->get($this->startCategoryId);
 	}
 
-	public function getNavigationByCategory($categoryId) {
-		return $this->get($categoryId);
+	public function setStartCategoryId($catId) {
+		$this->startCategoryId = $catId;
+	}
+
+	public function setStartLevel($startLevel) {
+		global $REX;
+
+		$navPath = explode('|', ('0|0' . $REX['ART'][$REX['ARTICLE_ID']]['path'][$REX['CUR_CLANG']] . $REX['ARTICLE_ID'] . '|'));
+
+		$this->startCategoryId = $navPath[$startLevel];
 	}
 
 	public function setLevelDepth($levelDepth) {

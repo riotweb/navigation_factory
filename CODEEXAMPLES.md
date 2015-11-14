@@ -6,8 +6,11 @@ Ausgabe des 1. Navigationslevels
 
 ```php
 $nav = new rex_nav();
-$nav->setLevelDepth(1);
-echo $nav->getNavigationByLevel(0);
+
+$nav->setStartLevel(1); // startet bei level 1
+$nav->setLevelDepth(1); // 1 level tief
+
+echo $nav->getNavigation();
 
 ```
 
@@ -16,8 +19,11 @@ Ausgabe des 2. und 3. Navigationslevels
 
 ```php
 $nav = new rex_nav();
-$nav->setLevelDepth(3);
-echo $nav->getNavigationByLevel(1);
+
+$nav->setStartLevel(2); // startet bei level 2
+$nav->setLevelDepth(2); // 2 level tief
+
+echo $nav->getNavigation();
 ```
 
 Ausgabe der Navigation mit Startkategorie-Id = 42
@@ -25,8 +31,11 @@ Ausgabe der Navigation mit Startkategorie-Id = 42
 
 ```php
 $nav = new rex_nav();
-$nav->setLevelDepth(2);
-echo $nav->getNavigationByCategory(42);
+
+$nav->setStartCategoryId(42); // startet bei kategorie id = 42
+$nav->setLevelDepth(2); // 2 level tief
+
+echo $nav->getNavigation();
 ```
 
 
@@ -36,6 +45,7 @@ Alle Methoden und Paramater der rex_nav Klasse
 ```php
 $nav = new rex_nav();
 
+$nav->setStartCategory(42);
 $nav->setLevelDepth(2); // 2 level tief
 $nav->setShowAll(true); // alle unterebenen werden angezeigt
 $nav->setIgnoreOfflines(true); // offline artikel werden nicht angezeigt
@@ -58,7 +68,7 @@ $nav->setCustomLink(function($cat, $depth) { // php funktion die den link zurüc
     }
 });
 
-echo $nav->getNavigationByCategory(42);
+echo $nav->getNavigation();
 ```
 
 Ausgabe einer einfachen Sprachnavigation
