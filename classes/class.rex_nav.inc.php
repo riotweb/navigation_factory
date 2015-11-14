@@ -97,7 +97,7 @@ class rex_nav {
 		$this->liClassFromMetaField = $liClassFromMetaField;
 	}
 
-	public function setLinkFromUserFunc($linkFromUserFunc) {
+	public function setCustomLink($linkFromUserFunc) {
 		$this->linkFromUserFunc = $linkFromUserFunc;
 	}
 

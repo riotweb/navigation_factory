@@ -66,7 +66,7 @@ $nav->setLiIdFromMetaField("cat_css_id"); // li id aus metainfo feld: "cat_css_i
 $nav->setLiClassFromMetaField("cat_css_class"); // li klasse aus metainfo feld: "cat_css_class"
 $nav->setLiIdFromCategoryId(array(42 => "foo", 43 => "bar")); // li id anhand artikel id
 $nav->setLiClassFromCategoryId(array(42 => "my-class")); // li klasse anhand artikel id
-$nav->setLinkFromUserFunc(function($cat, $depth) { // php funktion die den link zurückgibt (hier als beispiel: erste ebene ohne verlinkung)
+$nav->setCustomLink(function($cat, $depth) { // php funktion die den link zurückgibt (hier als beispiel: erste ebene ohne verlinkung)
     if ($depth == 1) {
         return htmlspecialchars($cat->getName());
     } else {
