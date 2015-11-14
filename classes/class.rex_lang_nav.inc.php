@@ -58,11 +58,13 @@ class rex_lang_nav {
 		}
 		
 		// ul class
-		if ($this->ulClass != '') {
-			$ulIdAttribute .= ' class="' . $this->ulClass . '"';	
+		if ($this->ulClass == '') {
+			$ulClassAttribute = '';
+		} else {
+			$ulClassAttribute = ' class="' . $this->ulClass . '"';
 		}
 
-		$out = '<ul' . $ulIdAttribute . '>';
+		$out = '<ul' . $ulIdAttribute . $ulClassAttribute . '>';
 
 		foreach ($REX['CLANG'] as $clangId => $clangName) {
 			$article = OOArticle::getArticleById($REX['ARTICLE_ID'], $clangId);
