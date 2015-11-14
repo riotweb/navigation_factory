@@ -2,6 +2,7 @@ Navigation Factory AddOn für REDAXO 4
 =====================================
 
 !!! Hinweis: Addon befindet sich im Aufbau. !!!
+!!! Nicht für den Produktiveinsatz geeignet !!!
 
 Erweitere und modifizierte rex_navigation Klasse mit Zusatzfunktionen.
 
