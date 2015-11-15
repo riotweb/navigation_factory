@@ -20,12 +20,11 @@ Features
 * Reagiert automatisch auf gesperrte Artikel etc. bei installiertem Community AddOn
 * Ausgabe einer einfachen Sprachnavigation möglich
 * Ausgabe einer Breadcrumb Navigation möglich
-* Codebeispiele in der Hilfe des Addons
 
 Codebeispiele
 -------------
 
-Die Codebeispiele sind direkt im Addon als Menüpunkt aufrufbar. Alternativ im `docs` Ordner des Addons.
+Die Codebeispiele sind direkt im Addon als Menüpunkt aufrufbar. Alternativ sind diese auch im `docs` Ordner des Addons zu finden.
 
 Hinweise
 --------

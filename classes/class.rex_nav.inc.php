@@ -87,11 +87,11 @@ class rex_nav {
 		$this->activeClass = $activeClass;
 	}
 
-	public function setUlId($ulId, $level = 0) {
+	public function setUlId($ulId, $level = 1) {
 		$this->ulId[$level] = $ulId;
 	}
 
-	public function setUlClass($ulClass, $level = 0) {
+	public function setUlClass($ulClass, $level = 1) {
 		$this->ulClass[$level] = $ulClass;
 	}
 
@@ -141,11 +141,11 @@ class rex_nav {
 		$ulClassAttribute = '';
 
 		if (count($cats) > 0) {
-			if (isset($this->ulId[$depth])) {
+			if (isset($this->ulId[$depth - 1])) {
 				$ulIdAttribute = ' id="' . $this->ulId[$depth] . '"';
 			}
 
-			if (isset($this->ulClass[$depth])) {
+			if (isset($this->ulClass[$depth - 1])) {
 				$ulClassAttribute = ' class="' . $this->ulClass[$depth] . '"';
 			}
 

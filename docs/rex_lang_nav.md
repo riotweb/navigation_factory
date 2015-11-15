@@ -5,7 +5,7 @@ Ausgabe einer einfachen Sprachnavigation
 ----------------------------------------
 
 ```php
-$langNav = new rex_lang_nav();
+$nav = new rex_lang_nav();
 
 $nav->setUlId("lang-nav"); // ul id: "lang-nav"
 $nav->setUlClass("my-lang-class"); // ul class: "my-lang-class"
@@ -15,5 +15,5 @@ $nav->sethideLiIfOfflineArticle(false); // bei einem offline artikel li nicht ve
 $nav->setuseLangCodeAsLinkText(true); // langcode anstelle sprachname als linktext ausgeben
 $nav->setupperCaseLinkText(true); // linktext in großbuchstaben anzeigen
 
-echo $langNav->getNavigation();
+echo $nav->getNavigation();
 ```

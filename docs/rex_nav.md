@@ -45,7 +45,7 @@ Alle möglichen Methoden und Paramater der rex_nav Klasse
 ```php
 $nav = new rex_nav();
 
-$nav->setStartCategory(42);
+$nav->setStartCategoryId(42); // die startkategorie
 $nav->setLevelDepth(2); // 2 level tief
 $nav->setShowAll(true); // alle unterebenen werden angezeigt
 $nav->setIgnoreOfflines(false); // offline artikel werden angezeigt
@@ -53,8 +53,8 @@ $nav->setHideWebsiteStartArticle(true); // startartikel der website wird ausgebl
 $nav->setHideIds(array(42, 108)); // kategorien mit ids 42 und 108 werden ausgeblendet
 $nav->setSelectedClass("current"); // li klasse für selektierte menüpunkte: "current"
 $nav->setActiveClass("current active"); // li klasse für gerade aktiven menüpunkt: "current active"
-$nav->setUlId("nav", 0); // erste ul id: "nav"
-$nav->setUlClass("sf-menu", 0); // erste ul klasse "sf-menu"
+$nav->setUlId("nav", 1); // erste ul id: "nav"
+$nav->setUlClass("sf-menu", 1); // erste ul klasse "sf-menu"
 $nav->setLiClass("list-item"); // li klasse "list-item"
 $nav->setLiIdFromMetaField("cat_css_id"); // li id aus metainfo feld: "cat_css_id"
 $nav->setLiClassFromMetaField("cat_css_class"); // li klasse aus metainfo feld: "cat_css_class"
