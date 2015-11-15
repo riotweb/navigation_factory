@@ -8,7 +8,7 @@ Ausgabe einer einfachen Sprachnavigation
 $nav = new rex_lang_nav();
 
 $nav->setListId('lang-nav'); // ul id: 'lang-nav'
-$nav->setListClass('my-lang-class'); // ul class: 'my-lang-class'
+$nav->setListClass('lang'); // ul class: 'my-lang-class'
 $nav->setSelectedClass('current'); // li klasse für selektierten menüpunkt: 'current'
 $nav->setShowListItemIds(true); // zusätzliche, eindeutige li id's werden ausgegeben
 $nav->setHideListItemIfOfflineArticle(false); // bei einem offline artikel li nicht verstecken sondern auf startartikel der website verlinken

@@ -21,6 +21,13 @@ Features
 * Ausgabe einer einfachen Sprachnavigation möglich
 * Ausgabe einer Breadcrumb Navigation möglich
 
+PHP Klassen
+------------
+
+* `rex_nav` Klasse für die Ausgabe von Hauptnavigationen
+* `rex_lang_nav` Klasse für die Ausgabe von Sprachnavigationen
+* `rex_breadcrumb_nav` Klasse für die Ausgabe von Breadcrumb Navigationen
+
 Codebeispiele
 -------------
 
