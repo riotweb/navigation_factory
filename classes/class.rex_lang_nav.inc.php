@@ -1,42 +1,42 @@
 <?php
 
 class rex_lang_nav {
-	protected $ulId;
-	protected $ulClass;
+	protected $listId;
+	protected $listClass;
 	protected $selectedClass;
-	protected $showLiIds;
-	protected $hideLiIfOfflineArticle;
+	protected $showListItemIds;
+	protected $hideListItemIfOfflineArticle;
 	protected $useLangCodeAsLinkText;
 	protected $upperCaseLinkText;
 
 	public function __construct() {
-		$this->ulId = '';
-		$this->ulClass = '';
+		$this->listId = '';
+		$this->listClass = '';
 		$this->selectedClass = 'selected';
-		$this->showLiIds = false;
-		$this->hideLiIfOfflineArticle = false;
+		$this->showListItemIds = false;
+		$this->hideListItemIfOfflineArticle = false;
 		$this->useLangCodeAsLinkText = false;
 		$this->upperCaseLinkText = false;
 	}
 
-	public function setUlId($ulId) {
-		$this->ulId = $ulId;
+	public function setListId($listId) {
+		$this->listId = $listId;
 	}
 	
-	public function setUlClass($ulClass) {
-		$this->ulClass = $ulClass;
+	public function setListClass($listClass) {
+		$this->listClass = $listClass;
 	}
 
 	public function setSelectedClass($selectedClass) {
 		$this->selectedClass = $selectedClass;
 	}
 
-	public function setShowLiIds($showLiIds) {
-		$this->showLiIds = $showLiIds;
+	public function setShowListItemIds($showListItemIds) {
+		$this->showListItemIds = $showListItemIds;
 	}
 
-	public function setHideLiIfOfflineArticle($hideLiIfOfflineArticle) {
-		$this->hideLiIfOfflineArticle = $hideLiIfOfflineArticle;
+	public function setHideListItemIfOfflineArticle($hideListItemIfOfflineArticle) {
+		$this->hideListItemIfOfflineArticle = $hideListItemIfOfflineArticle;
 	}
 
 	public function setUseLangCodeAsLinkText($useLangCodeAsLinkText) {
@@ -50,21 +50,21 @@ class rex_lang_nav {
 	public function getNavigation() {
 		global $REX;
 
-		// ul id
-		if ($this->ulId == '') {
-			$ulIdAttribute = '';
+		// list id
+		if ($this->listId == '') {
+			$listIdAttribute = '';
 		} else {
-			$ulIdAttribute = ' id="' . $this->ulId . '"';
+			$listIdAttribute = ' id="' . $this->listId . '"';
 		}
 		
-		// ul class
-		if ($this->ulClass == '') {
-			$ulClassAttribute = '';
+		// list class
+		if ($this->listClass == '') {
+			$listClassAttribute = '';
 		} else {
-			$ulClassAttribute = ' class="' . $this->ulClass . '"';
+			$listClassAttribute = ' class="' . $this->listClass . '"';
 		}
 
-		$out = '<ul' . $ulIdAttribute . $ulClassAttribute . '>';
+		$out = '<ul' . $listIdAttribute . $listClassAttribute . '>';
 
 		foreach ($REX['CLANG'] as $clangId => $clangName) {
 			$article = OOArticle::getArticleById($REX['ARTICLE_ID'], $clangId);
@@ -78,7 +78,7 @@ class rex_lang_nav {
 				$articleStatus = false;
 			}
 
-			if (!$articleStatus && $this->hideLiIfOfflineArticle) {
+			if (!$articleStatus && $this->hideListItemIfOfflineArticle) {
 				// do nothing
 			} else {
 				$langCode = '';
@@ -115,21 +115,21 @@ class rex_lang_nav {
 				}
 
 				// li attribute
-				if ($this->showLiIds) {
-					$liIdAttribute = ' id="' . $langSlug . '"';
+				if ($this->showListItemIds) {
+					$listItemIdAttribute = ' id="' . $langSlug . '"';
 				} else {
-					$liIdAttribute = '';
+					$listItemIdAttribute = '';
 				}
 
 				// class attribute
 				if ($REX['CUR_CLANG'] == $clangId) {
-					$liClassAttribute = ' class="' . $this->selectedClass . '"';
+					$listItemClassAttribute = ' class="' . $this->selectedClass . '"';
 				} else {
-					$liClassAttribute = '';
+					$listItemClassAttribute = '';
 				}
 				
 				// li out
-				$out .= '<li' . $liIdAttribute . $liClassAttribute . '><a href="' . rex_getUrl($newArticleId, $clangId) . '">' . $linkText . '</a></li>';
+				$out .= '<li' . $listItemIdAttribute . $listItemClassAttribute . '><a href="' . rex_getUrl($newArticleId, $clangId) . '">' . $linkText . '</a></li>';
 			}
 		}
 

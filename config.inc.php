@@ -3,7 +3,7 @@
 $REX['ADDON']['name']['navigation_factory'] = 'Navigation Factory';
 $REX['ADDON']['page']['navigation_factory'] = 'navigation_factory';
 $REX['ADDON']['version']['navigation_factory'] = '1.0.0 DEV';
-$REX['ADDON']['author']['navigation_factory'] = 'redaxo.org';
+$REX['ADDON']['author']['navigation_factory'] = 'RexDude';
 $REX['ADDON']['supportpage']['navigation_factory'] = 'forum.redaxo.org';
 $REX['ADDON']['perm']['navigation_factory'] = 'navigation_factory[]';
 
@@ -20,15 +20,6 @@ require($REX['INCLUDE_PATH'] . '/addons/navigation_factory/classes/class.rex_nav
 require($REX['INCLUDE_PATH'] . '/addons/navigation_factory/classes/class.rex_lang_nav.inc.php');
 require($REX['INCLUDE_PATH'] . '/addons/navigation_factory/classes/class.rex_breadcrumb_nav.inc.php');
 require($REX['INCLUDE_PATH'] . '/addons/navigation_factory/classes/class.rex_navigation_factory_utils.inc.php');
-
-// default settings (user settings are saved in data dir!)
-$REX['ADDON']['navigation_factory']['settings'] = array(
-	'foo' => 'bar',
-	'foo2' => true,
-);
-
-// overwrite default settings with user settings
-rex_navigation_factory_utils::includeSettingsFile();
 
 if ($REX['REDAXO']) {
 	// add subpages

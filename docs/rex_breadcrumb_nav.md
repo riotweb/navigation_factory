@@ -7,9 +7,12 @@ Ausgabe einer Breadcrumb Navigation
 ```php
 $nav = new rex_breadcrumb_nav();
 
-$nav->setCssClass("breadcrumb"); // ul klasse: "breadcrumb"
-$nav->setOlList(false); // es wird eine ul liste ausgegeben
-$nav->setStartArticleName("<i class='fa fa-home'></i>"); // ausgabe mit font-awesome icon
+$nav->setListId('breadcrumb'); // ul id: 'breadcrumb'
+$nav->setListClass('breadcrumb-nav'); // ul klasse: 'breadcrumb-nav'
+$nav->setOrderedList(true); // es wird eine ol liste anstelle einer ul liste ausgegeben
+$nav->setStartArticleName('Home'); // startartikel name: 'home'
+$nav->setStartArticleIconClass('fa fa-home'); // startartikel ausgabe mit font-awesome icon
+$nav->setHideStartArticleName(true); // startartikel name wird nicht angezeigt, icon sollte dafür gesetzt werden
 
 echo $nav->getNavigation();
 ```

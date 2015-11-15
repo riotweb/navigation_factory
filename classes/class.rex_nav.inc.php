@@ -8,15 +8,15 @@ class rex_nav {
 	protected $hideWebsiteStartArticle;
 	protected $selectedClass;
 	protected $activeClass;
-	protected $ulId;
-	protected $ulClass;
-	protected $liClass;
-	protected $liIdFromMetaField;
-	protected $liClassFromMetaField;
+	protected $listId;
+	protected $listClass;
+	protected $listItemClass;
+	protected $listItemIdFromMetaField;
+	protected $listItemClassFromMetaField;
 	protected $customLinkFunction;
 	protected $hideIds;
-	protected $liIdFromCategoryId;
-	protected $liClassFromCategoryId;
+	protected $listItemIdFromCategoryId;
+	protected $listItemClassFromCategoryId;
 
 	// old vars from rex_navigation
 	var $path = array();
@@ -32,15 +32,15 @@ class rex_nav {
 		$this->hideWebsiteStartArticle = false;
 		$this->selectedClass = 'selected';
 		$this->activeClass = 'selected active';
-		$this->ulId = array();
-		$this->ulClass = array();
-		$this->liClass = '';
-		$this->liIdFromMetaField = '';
-		$this->liClassFromMetaField = '';
+		$this->listId = array();
+		$this->listClass = array();
+		$this->listItemClass = '';
+		$this->listItemIdFromMetaField = '';
+		$this->listItemClassFromMetaField = '';
 		$this->customLinkFunction = '';
 		$this->hideIds = array();
-		$this->liIdFromCategoryId = array();
-		$this->liClassFromCategoryId = array();
+		$this->listItemIdFromCategoryId = array();
+		$this->listItemClassFromCategoryId = array();
 	}
 
 	public function getNavigation() {
@@ -87,24 +87,24 @@ class rex_nav {
 		$this->activeClass = $activeClass;
 	}
 
-	public function setUlId($ulId, $level = 1) {
-		$this->ulId[$level - 1] = $ulId;
+	public function setListId($listId, $level = 1) {
+		$this->listId[$level - 1] = $listId;
 	}
 
-	public function setUlClass($ulClass, $level = 1) {
-		$this->ulClass[$level - 1] = $ulClass;
+	public function setListClass($listClass, $level = 1) {
+		$this->listClass[$level - 1] = $listClass;
 	}
 
-	public function setLiClass($liClass) {
-		$this->liClass = $liClass;
+	public function setListItemClass($listItemClass) {
+		$this->listItemClass = $listItemClass;
 	}
 
-	public function setLiIdFromMetaField($liIdFromMetaField) {
-		$this->liIdFromMetaField = $liIdFromMetaField;
+	public function setListItemIdFromMetaField($listItemIdFromMetaField) {
+		$this->listItemIdFromMetaField = $listItemIdFromMetaField;
 	}
 
-	public function setLiClassFromMetaField($liClassFromMetaField) {
-		$this->liClassFromMetaField = $liClassFromMetaField;
+	public function setListItemClassFromMetaField($listItemClassFromMetaField) {
+		$this->listItemClassFromMetaField = $listItemClassFromMetaField;
 	}
 
 	public function setCustomLink($customLinkFunction) {
@@ -115,12 +115,12 @@ class rex_nav {
 		$this->hideIds = $hideIds;
 	}
 
-	public function setliIdFromCategoryId($liIdFromCategoryId) {
-		$this->liIdFromCategoryId = $liIdFromCategoryId;
+	public function setListItemIdFromCategoryId($listItemIdFromCategoryId) {
+		$this->listItemIdFromCategoryId = $listItemIdFromCategoryId;
 	}
 
-	public function setliClassFromCategoryId($liClassFromCategoryId) {
-		$this->liClassFromCategoryId = $liClassFromCategoryId;
+	public function setListItemClassFromCategoryId($listItemClassFromCategoryId) {
+		$this->listItemClassFromCategoryId = $listItemClassFromCategoryId;
 	}
 
 	protected function _getNavigation($categoryId) { 
@@ -137,46 +137,45 @@ class rex_nav {
 		}
 
 		$return = '';
-		$ulIdAttribute = '';
-		$ulClassAttribute = '';
+		$listIdAttribute = '';
+		$listClassAttribute = '';
 
 		if (count($cats) > 0) {
-			if (isset($this->ulId[$depth])) {
-				$ulIdAttribute = ' id="' . $this->ulId[$depth] . '"';
+			if (isset($this->listId[$depth])) {
+				$listIdAttribute = ' id="' . $this->listId[$depth] . '"';
 			}
 
-			if (isset($this->ulClass[$depth])) {
-				$ulClassAttribute = ' class="' . $this->ulClass[$depth] . '"';
+			if (isset($this->listClass[$depth])) {
+				$listClassAttribute = ' class="' . $this->listClass[$depth] . '"';
 			}
 
-			$return .= '<ul' . $ulIdAttribute . $ulClassAttribute . '>';
+			$return .= '<ul' . $listIdAttribute . $listClassAttribute . '>';
 		}
 			
 		foreach ($cats as $cat) {
 			if ($this->_checkCallbacks($cat, $depth)) {
-
 				$cssClasses = '';
 				$idAttribute = '';
 
 				// default li class
-				if ($this->liClass != '') {
-					$cssClasses .= ' ' . $this->liClass;
+				if ($this->listItemClass != '') {
+					$cssClasses .= ' ' . $this->listItemClass;
 				}
 
 				// li class
-				if (is_array($this->liClassFromCategoryId) && isset($this->liClassFromCategoryId[$cat->getId()])) {
-					$cssClasses .= ' ' . $this->liClassFromCategoryId[$cat->getId()];
+				if (is_array($this->listItemClassFromCategoryId) && isset($this->listItemClassFromCategoryId[$cat->getId()])) {
+					$cssClasses .= ' ' . $this->listItemClassFromCategoryId[$cat->getId()];
 				}
 
-				if ($this->liClassFromMetaField != '' && $cat->getValue($this->liClassFromMetaField) != '') {
-					$cssClasses .= ' ' . $cat->getValue($this->liClassFromMetaField);
+				if ($this->listItemClassFromMetaField != '' && $cat->getValue($this->listItemClassFromMetaField) != '') {
+					$cssClasses .= ' ' . $cat->getValue($this->listItemClassFromMetaField);
 				}
 
 				// li id
-				if (is_array($this->liIdFromCategoryId) && isset($this->liIdFromCategoryId[$cat->getId()])) {
-					$idAttribute = ' id="' . $this->liIdFromCategoryId[$cat->getId()] . '"';
-				} elseif ($this->liIdFromMetaField != '' && $cat->getValue($this->liIdFromMetaField) != '') {
-					$idAttribute = ' id="' . $cat->getValue($this->liIdFromMetaField) . '"';
+				if (is_array($this->listItemIdFromCategoryId) && isset($this->listItemIdFromCategoryId[$cat->getId()])) {
+					$idAttribute = ' id="' . $this->listItemIdFromCategoryId[$cat->getId()] . '"';
+				} elseif ($this->listItemIdFromMetaField != '' && $cat->getValue($this->listItemIdFromMetaField) != '') {
+					$idAttribute = ' id="' . $cat->getValue($this->listItemIdFromMetaField) . '"';
 				}
 
 				// selected class
