@@ -16,9 +16,9 @@ if (!class_exists('Parsedown')) {
 
 // chapters
 $chapterpages = array (
-	'' => array($I18N->msg('navigation_factory_help_chapter_readme'), 'pages/help/readme.inc.php'),
-	'changelog' => array($I18N->msg('navigation_factory_help_chapter_changelog'), 'pages/help/changelog.inc.php'),
-	'license' => array($I18N->msg('navigation_factory_help_chapter_license'), 'pages/help/license.inc.php'),
+	'' => array($I18N->msg('navigation_factory_codeexamples_chapter_rex_nav'), 'pages/codeexamples/rex_nav.inc.php'),
+	'rex_lang_nav' => array($I18N->msg('navigation_factory_codeexamples_chapter_rex_lang_nav'), 'pages/codeexamples/rex_lang_nav.inc.php'),
+	'rex_breadcrumb_nav' => array($I18N->msg('navigation_factory_codeexamples_chapter_rex_breadcrumb_nav'), 'pages/codeexamples/rex_breadcrumb_nav.inc.php')
 );
 
 // build chapter navigation

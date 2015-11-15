@@ -1,31 +1,18 @@
 navigation_factory_addon_help = 
 
-navigation_factory_start = Start
-navigation_factory_settings = Einstellungen
-navigation_factory_setup = Setup
+navigation_factory_codeexamples = Codebeispiele
 navigation_factory_help = Hilfe
 
-navigation_factory_start_title = Navigation Factory für REDAXO
-navigation_factory_start_example_link_internal = Interner Beispiellink
-navigation_factory_start_example_link_external = Externer Beispiellink
+navigation_factory_codeexamples_chapter_rex_nav = Hauptnavigation
+navigation_factory_codeexamples_chapter_rex_lang_nav = Sprachnavigation
+navigation_factory_codeexamples_chapter_rex_breadcrumb_nav = Breadcrumb Navigation
 
 navigation_factory_help_chapter_readme = Readme
 navigation_factory_help_chapter_changelog = Changelog
-navigation_factory_help_chapter_codeexamples = Codebeispiele
 navigation_factory_help_chapter_license = Lizenz
-
-navigation_factory_setup_step1 = Schritt 1: Mach dies
-navigation_factory_setup_step1_desc1 = Beschreibungstext 1
-navigation_factory_setup_step2 = Schritt 2: Mach das
-navigation_factory_setup_step2_desc1 = Beschreibungstext 2
-navigation_factory_setup_step3 = Schritt 3: Mach jenes
-navigation_factory_setup_step3_desc1 = Beschreibungstext 3
 
 navigation_factory_config_ok = Einstellungen wurden aktualisiert.
 navigation_factory_config_error = Einstellungen konnte nicht gespeichert werden!
 navigation_factory_install_make_dir = Der Ordner "/redaxo/include/{0}/" kann nicht angelegt werden, überprüfen Sie die Schreibrechte oder legen Sie den Ordner von Hand an und geben ihm Schreibrechte.
 navigation_factory_install_perm_dir = Der Ordner "/redaxo/include/{0}/" benötigt Schreibrechte!
 
-navigation_factory_settings_foo = Foo
-navigation_factory_settings_foo2 = Foo2
-navigation_factory_settings_save = Einstellungen speichern

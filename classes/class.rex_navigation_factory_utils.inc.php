@@ -151,15 +151,21 @@ class rex_navigation_factory_utils {
 		}
 	}
 
-	public static function getHtmlFromMDFile($mdFile, $search = array(), $replace = array(), $setBreaksEnabled = true) {
+	public static function getHtmlFromMDFile($mdFile, $search = array(), $replace = array(), $setBreaksEnabled = true, $useDocsDir = false) {
 		global $REX;
 
 		$curLocale = strtolower($REX['LANG']);
 
-		if ($curLocale == 'de_de') {
-			$file = $REX['INCLUDE_PATH'] . '/addons/navigation_factory/' . $mdFile;
+		if ($useDocsDir) {
+			$rootPath = $REX['INCLUDE_PATH'] . '/addons/navigation_factory/docs/';
 		} else {
-			$file = $REX['INCLUDE_PATH'] . '/addons/navigation_factory/lang/' . $curLocale . '/' . $mdFile;
+			$rootPath = $REX['INCLUDE_PATH'] . '/addons/navigation_factory/';
+		}
+
+		if ($curLocale == 'de_de') {
+			$file = $rootPath . $mdFile;
+		} else {
+			$file = $rootPath . 'lang/' . $curLocale . '/' . $mdFile;
 		}
 
 		if (file_exists($file)) {

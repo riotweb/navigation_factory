@@ -22,16 +22,16 @@ Features
 * Ausgabe einer Breadcrumb Navigation möglich
 * Codebeispiele in der Hilfe des Addons
 
+Codebeispiele
+-------------
+
+Die Codebeispiele sind direkt im Addon als Menüpunkt aufrufbar. Alternativ im `docs` Ordner des Addons.
+
 Hinweise
 --------
 
 * Getestet mit REDAXO 4.6
 * AddOn-Ordner lautet: `navigation_factory`
-
-Codebeispiele
--------------
-
-siehe [CODEEXAMPLES.md](CODEEXAMPLES.md)
 
 Changelog
 ---------
