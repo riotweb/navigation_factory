@@ -16,3 +16,6 @@ Navigation Factory - Changelog
 * Geändert: Methode `setLinkFromUserFunc()` in `setCustomLink()` umbenannt
 * Geändert: Es gab umfangreiche Änderungen an der Breadcrumb Navigation. Bitte die Codebeispiele studieren
 * Neu: Methode `setListClass()` zur Klasse `rex_lang_nav` hinzugefügt, thx@darwin
+* Neu: Methode `setShowHasSubClass()` zur Klasse `rex_lang_nav` hinzugefügt, zeigt automatisch eine 'has-sub' Klasse für die Ul an
+* Neu: Methode `setHasSubClass()` zur Klasse `rex_lang_nav` hinzugefügt, zum ändern des Klassenmames. default ist 'has-sub'
+

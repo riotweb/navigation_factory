@@ -17,6 +17,8 @@ class rex_nav {
 	protected $hideIds;
 	protected $listItemIdFromCategoryId;
 	protected $listItemClassFromCategoryId;
+	protected $showHasSubClass;
+	protected $hasSubClass;
 
 	// old vars from rex_navigation
 	var $path = array();
@@ -41,6 +43,8 @@ class rex_nav {
 		$this->hideIds = array();
 		$this->listItemIdFromCategoryId = array();
 		$this->listItemClassFromCategoryId = array();
+		$this->showHasSubClass = false;
+		$this->hasSubClass = 'has-sub';
 	}
 
 	public function getNavigation() {
@@ -123,10 +127,23 @@ class rex_nav {
 		$this->listItemClassFromCategoryId = $listItemClassFromCategoryId;
 	}
 
+	public function setShowHasSubClass($showHasSubClass) {
+		$this->showHasSubClass = $showHasSubClass;
+	}
+
+	public function setHasSubClass($hasSubClass) {
+		$this->hasSubClass = $hasSubClass;
+	}
+
 	protected function _getNavigation($categoryId) { 
 		global $REX;
 
 		static $depth = 0;
+
+		$return = '';
+		$listIdAttribute = '';
+		$listClassAttribute = '';
+		$listClasses = '';
 		
 		if ($categoryId < 0) {
 			return '';
@@ -134,11 +151,11 @@ class rex_nav {
 			$cats = OOCategory::getRootCategories($this->ignoreOfflines);
 		} else {
 			$cats = OOCategory::getChildrenById($categoryId, $this->ignoreOfflines);
-		}
 
-		$return = '';
-		$listIdAttribute = '';
-		$listClassAttribute = '';
+			if ($this->showHasSubClass) {
+				$listClasses .= ' ' . $this->hasSubClass;
+			}
+		}
 
 		if (count($cats) > 0) {
 			if (isset($this->listId[$depth])) {
@@ -146,7 +163,11 @@ class rex_nav {
 			}
 
 			if (isset($this->listClass[$depth])) {
-				$listClassAttribute = ' class="' . $this->listClass[$depth] . '"';
+				$listClasses .= ' ' . $this->listClass[$depth];
+			}
+
+			if ($listClasses != '') {
+				$listClassAttribute = ' class="' . trim($listClasses) . '"';
 			}
 
 			$return .= '<ul' . $listIdAttribute . $listClassAttribute . '>';
