@@ -9,13 +9,13 @@ Navigation Factory - Changelog
 * Geändert: Alle Klassen geben einheitlich die Navigation über Ausgabemethode `getNavigation()` aus
 * Geändert: `getNavigationByCategory()` entfernt, stattdessen `setStartCategoryId()` hinzugefügt
 * Geändert: `getNavigationByLevel()` entfernt, stattdessen `setLevelStart()` hinzugefügt
-* Geändert: `setLevelCount()` hinzugefügt, gibt die Anzahl der auszugebenden Levels aus, beginned ab dem Start-Level bzw. der Start-Katageorie
+* Geändert: `setLevelCount()` hinzugefügt, gibt die Anzahl der auszugebenden Levels an, beginned ab dem Start-Level bzw. der Start-Kategeorie
 * Geändert: `setLevelStart()` erstes Level beginnt jetzt bei 1, nicht mehr bei 0.
 * Geändert: `setListClass()` (ehemals `setUlClass()`) erstes Level beginnt jetzt bei 1, nicht mehr bei 0.
 * Geändert: `setListId()` (ehemals `setUlId()`) erstes Level beginnt jetzt bei 1, nicht mehr bei 0.
 * Geändert: Methode `setLinkFromUserFunc()` in `setCustomLink()` umbenannt
 * Geändert: Es gab umfangreiche Änderungen an der Breadcrumb Navigation. Bitte die Codebeispiele studieren
 * Neu: Methode `setListClass()` zur Klasse `rex_lang_nav` hinzugefügt, thx@darwin
-* Neu: Methode `setShowHasSubClass()` zur Klasse `rex_lang_nav` hinzugefügt, zeigt automatisch eine 'has-sub' Klasse für die Ul an
-* Neu: Methode `setHasSubClass()` zur Klasse `rex_lang_nav` hinzugefügt, zum ändern des Klassenmames. default ist 'has-sub'
+* Neu: Methode `setShowHasSubClass()` zur Klasse `rex_nav` hinzugefügt, zeigt automatisch eine 'has-sub' Klasse für die Ul an
+* Neu: Methode `setHasSubClass()` zur Klasse `rex_nav` hinzugefügt, zum ändern des Klassenmames. default ist 'has-sub'
 
