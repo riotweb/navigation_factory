@@ -1,7 +1,7 @@
 Navigation Factory - Changelog
 ==============================
 
-### Version 1.0.0 DEV
+### Version 1.0.0 - 18. November 2015
 
 * Geändert: Klasse `nav42` umbenannt und aufgeteilt in die Klassen `rex_nav`, `rex_lang_nav` und `rex_breadcrumb_nav`
 * Geändert: Alle Methodennamen mit einem `Li` darin wurden umbenannt. `Li` = `ListItem`
