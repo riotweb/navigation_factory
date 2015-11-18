@@ -8,7 +8,7 @@ Ausgabe des 1. Navigationslevels
 $nav = new rex_nav();
 
 $nav->setStartLevel(1); // startet bei level 1
-$nav->setLevelDepth(1); // 1 level tief vom start level aus
+$nav->setLevelCount(1); // anzahl der ausgegeben level: 1 level
 
 echo $nav->getNavigation();
 
@@ -21,7 +21,7 @@ Ausgabe des 2. und 3. Navigationslevels
 $nav = new rex_nav();
 
 $nav->setStartLevel(2); // startet bei level 2
-$nav->setLevelDepth(2); // 2 level tief vom start level aus
+$nav->setLevelCount(2); // anzahl der ausgegeben level: 2 level
 
 echo $nav->getNavigation();
 ```
@@ -33,7 +33,7 @@ Ausgabe der Navigation mit Startkategorie Id = 42
 $nav = new rex_nav();
 
 $nav->setStartCategoryId(42); // startet bei kategorie id = 42
-$nav->setLevelDepth(1); // 1 level tief von start kategorie aus
+$nav->setLevelCount(1); // anzahl der ausgegeben level: 1 level
 
 echo $nav->getNavigation();
 ```
@@ -46,7 +46,7 @@ Alle möglichen Methoden und Parameter der rex_nav Klasse
 $nav = new rex_nav();
 
 $nav->setStartCategoryId(42); // beginnt bei der startkategorie 42
-$nav->setLevelDepth(2); // 2 level tief
+$nav->setLevelCount(2); // anzahl der ausgegeben level: 2 level
 $nav->setShowAll(true); // alle unterebenen werden angezeigt
 $nav->setIgnoreOfflines(false); // offline artikel werden angezeigt
 $nav->setHideWebsiteStartArticle(true); // startartikel der website wird ausgeblendet

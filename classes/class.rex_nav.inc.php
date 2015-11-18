@@ -2,7 +2,7 @@
 
 class rex_nav {
 	protected $startCategoryId;
-	protected $levelDepth;
+	protected $levelCount;
 	protected $showAll;
 	protected $ignoreOfflines;
 	protected $hideWebsiteStartArticle;
@@ -28,7 +28,7 @@ class rex_nav {
 
 	public function __construct() {
 		$this->startCategoryId = 0;
-		$this->levelDepth = 3;
+		$this->levelCount = 5;
 		$this->showAll = false;
 		$this->ignoreOfflines = true;
 		$this->hideWebsiteStartArticle = false;
@@ -67,8 +67,8 @@ class rex_nav {
 		}
 	}
 
-	public function setLevelDepth($levelDepth) {
-		$this->levelDepth = $levelDepth;
+	public function setLevelCount($levelCount) {
+		$this->levelCount = $levelCount;
 	}
 
 	public function setShowAll($showAll) {
@@ -286,7 +286,7 @@ class rex_nav {
 						}
 					} 
 				
-					if (($this->showAll || $cat->getId() == $this->current_category_id || in_array($cat->getId(), $this->path)) && ($this->levelDepth > $depth || $this->levelDepth < 0)) {
+					if (($this->showAll || $cat->getId() == $this->current_category_id || in_array($cat->getId(), $this->path)) && ($this->levelCount > $depth || $this->levelCount < 0)) {
 						$return .= $this->_getNavigation($cat->getId());
 					}
 				

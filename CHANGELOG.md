@@ -9,7 +9,7 @@ Navigation Factory - Changelog
 * Geändert: Alle Klassen geben einheitlich die Navigation über Ausgabemethode `getNavigation()` aus
 * Geändert: `getNavigationByCategory()` entfernt, stattdessen `setStartCategoryId()` hinzugefügt
 * Geändert: `getNavigationByLevel()` entfernt, stattdessen `setLevelStart()` hinzugefügt
-* Geändert: `setLevelDepth()` hinzugefügt
+* Geändert: `setLevelCount()` hinzugefügt, gibt die Anzahl der auszugebenden Levels aus, beginned ab dem Start-Level bzw. der Start-Katageorie
 * Geändert: `setLevelStart()` erstes Level beginnt jetzt bei 1, nicht mehr bei 0.
 * Geändert: `setListClass()` (ehemals `setUlClass()`) erstes Level beginnt jetzt bei 1, nicht mehr bei 0.
 * Geändert: `setListId()` (ehemals `setUlId()`) erstes Level beginnt jetzt bei 1, nicht mehr bei 0.
