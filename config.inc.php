@@ -2,7 +2,7 @@
 // init addon
 $REX['ADDON']['name']['navigation_factory'] = 'Navigation Factory';
 $REX['ADDON']['page']['navigation_factory'] = 'navigation_factory';
-$REX['ADDON']['version']['navigation_factory'] = '1.0.0';
+$REX['ADDON']['version']['navigation_factory'] = '1.0.1 DEV';
 $REX['ADDON']['author']['navigation_factory'] = 'RexDude';
 $REX['ADDON']['supportpage']['navigation_factory'] = 'forum.redaxo.org';
 $REX['ADDON']['perm']['navigation_factory'] = 'navigation_factory[]';
@@ -24,7 +24,8 @@ require($REX['INCLUDE_PATH'] . '/addons/navigation_factory/classes/class.rex_nav
 if ($REX['REDAXO']) {
 	// add subpages
 	$REX['ADDON']['navigation_factory']['SUBPAGES'] = array(
-		array('', $I18N->msg('navigation_factory_codeexamples')),
+		array('', $I18N->msg('navigation_factory_start')),
+		array('codeexamples', $I18N->msg('navigation_factory_codeexamples')),
 		array('help', $I18N->msg('navigation_factory_help'))
 	);
 

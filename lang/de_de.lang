@@ -1,7 +1,10 @@
 navigation_factory_addon_help = Erweitere und modifizierte rex_navigation Klasse mit Zusatzfunktionen.
 
+navigation_factory_start = Start
 navigation_factory_codeexamples = Codebeispiele
 navigation_factory_help = Hilfe
+
+navigation_factory_start_title = Navigation Factory für REDAXO
 
 navigation_factory_codeexamples_chapter_rex_nav = Hauptnavigation
 navigation_factory_codeexamples_chapter_rex_lang_nav = Sprachnavigation
