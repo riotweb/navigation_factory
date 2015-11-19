@@ -1,9 +1,9 @@
 Navigation Factory - Changelog
 ==============================
 
-### Version 1.0.1 DEV
+### Version 1.0.1 - 19. November 2015
 
-* Update: Addon sollte reinstalliert werden, damit das Logo sichtbar wird :)
+* Updatehinweis: Addon bitte reinstallieren.
 * Neu: Startseite mit Logo hinzugefügt
 
 ### Version 1.0.0 - 18. November 2015
