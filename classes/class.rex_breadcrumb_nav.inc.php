@@ -1,6 +1,7 @@
 <?php
 
 class rex_breadcrumb_nav {
+	protected $listMode;
 	protected $listId;
 	protected $listClass;
 	protected $orderedList;
@@ -9,12 +10,17 @@ class rex_breadcrumb_nav {
 	protected $hideStartArticleName;
 
 	public function __construct() {
+		$this->listMode = true;
 		$this->listId = '';
 		$this->listClass = '';
 		$this->orderedList = false;
 		$this->startArticleName = '';
 		$this->startArticleIconClass = '';
 		$this->hideStartArticleName = false;
+	}
+
+	public function setListMode($listMode) {
+		$this->listMode = $listMode;
 	}
 
 	public function setListId($listId) {
@@ -44,6 +50,8 @@ class rex_breadcrumb_nav {
 	public function getNavigation() {
 		global $REX;
 
+		$html = '';
+
 		if ($this->orderedList) {
 			$listType = 'ol';
 		} else {
@@ -62,7 +70,10 @@ class rex_breadcrumb_nav {
 			$listClassAttribute = '';
 		}
 
-		$html = '<' . $listType . $listIdAttribute . $listClassAttribute . '>';
+		if ($this->listMode) {
+			$html = '<' . $listType . $listIdAttribute . $listClassAttribute . '>';
+		}
+
 		$path = explode('|', $REX['ART'][$REX['ARTICLE_ID']]['path'][$REX['CUR_CLANG']] . $REX['ARTICLE_ID']);
 
 		if ($REX['ARTICLE_ID'] !== $REX['START_ARTICLE_ID']) {
@@ -75,7 +86,10 @@ class rex_breadcrumb_nav {
 
 				if ($article->isOnline()) {
 					$linkText = $article->getName();
-					$html .= '<li>';
+
+					if ($this->listMode) {
+						$html .= '<li>';
+					}
 
 					if (intval($id) === $REX['START_ARTICLE_ID']) {
 						if ($this->hideStartArticleName) {
@@ -97,12 +111,16 @@ class rex_breadcrumb_nav {
 						$html .= '<a href="' . $article->getUrl() . '">' . $linkText . '</a>';
 					}
 
-					$html .= '</li>';
+					if ($this->listMode) {
+						$html .= '</li>';
+					}
 				}
 			}
 		}
 
-		$html .= '</' . $listType . '>';
+		if ($this->listMode) {
+			$html .= '</' . $listType . '>';
+		}
 		
 		return $html;
 	}

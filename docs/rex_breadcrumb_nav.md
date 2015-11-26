@@ -7,6 +7,7 @@ Ausgabe einer Breadcrumb Navigation
 ```php
 $nav = new rex_breadcrumb_nav();
 
+$nav->setListMode(false); // gibt eine reine linkliste ohne ul/li's aus
 $nav->setListId('breadcrumb-nav'); // ul (ol) id: 'breadcrumb'
 $nav->setListClass('breadcrumb'); // ul (ol) klasse: 'breadcrumb-nav'
 $nav->setOrderedList(true); // es wird eine ol liste anstelle einer ul liste ausgegeben

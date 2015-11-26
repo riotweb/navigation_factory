@@ -1,6 +1,10 @@
 Navigation Factory - Changelog
 ==============================
 
+### Version 1.0.2 DEV
+
+* Neu: `setListMode()` zur `rex_breadcrumb_nav` hinzugefügt. Ergibt bei `false` eine reine Linkliste ohne ul/li's, thx@JeGr
+
 ### Version 1.0.1 - 19. November 2015
 
 * Updatehinweis: Addon bitte reinstallieren.
