@@ -3,6 +3,8 @@ Navigation Factory - Changelog
 
 ### Version 1.0.2 DEV
 
+* Fixed: Community Addon Permissions
+* Fixed #2: `has-sub` in `rex_nav` wird jetzt dem Li zugewiesen, thx@alexwenz
 * Neu: `setListMode()` zur `rex_breadcrumb_nav` hinzugefügt. Ergibt bei `false` eine reine Linkliste ohne ul/li's, thx@JeGr
 
 ### Version 1.0.1 - 19. November 2015
