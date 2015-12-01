@@ -151,10 +151,6 @@ class rex_nav {
 			$cats = OOCategory::getRootCategories($this->ignoreOfflines);
 		} else {
 			$cats = OOCategory::getChildrenById($categoryId, $this->ignoreOfflines);
-
-			if ($this->showHasSubClass) {
-				$listClasses .= ' ' . $this->hasSubClass;
-			}
 		}
 
 		if (count($cats) > 0) {
@@ -312,8 +308,29 @@ class rex_nav {
 		if (class_exists('rex_com_auth')) {
 			$this->addCallback("nav42::checkPerm");
 		}
+
+		$out = $this->_getNavigation($categoryId);
+
+		// add has-sub
+		if ($this->showHasSubClass) {
+			$html = str_get_html($out);
+
+			if (is_object($html)) {
+				$matches = $html->find("ul");
+
+				foreach ($matches as $value) {
+					$parent = $value->parent();
+
+					if ($parent->tag == 'li') {
+						$parent->class = trim($this->hasSubClass . ' ' . $parent->class);
+					}
+				}
+
+				$out = $html;
+			}
+		}
 		
-		return $this->_getNavigation($categoryId);
+		return $out;
 	}
 
 	protected function _setActivePath() {

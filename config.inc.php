@@ -21,6 +21,10 @@ require($REX['INCLUDE_PATH'] . '/addons/navigation_factory/classes/class.rex_lan
 require($REX['INCLUDE_PATH'] . '/addons/navigation_factory/classes/class.rex_breadcrumb_nav.inc.php');
 require($REX['INCLUDE_PATH'] . '/addons/navigation_factory/classes/class.rex_navigation_factory_utils.inc.php');
 
+if (!class_exists('simple_html_dom_node')) {
+	require($REX['INCLUDE_PATH'] . '/addons/navigation_factory/classes/class.simple_html_dom.inc.php');
+}
+
 if ($REX['REDAXO']) {
 	// add subpages
 	$REX['ADDON']['navigation_factory']['SUBPAGES'] = array(
