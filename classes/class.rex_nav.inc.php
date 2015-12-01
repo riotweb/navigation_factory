@@ -306,7 +306,7 @@ class rex_nav {
 		}
 
 		if (class_exists('rex_com_auth')) {
-			$this->addCallback("nav42::checkPerm");
+			$this->addCallback("rex_nav::checkPerm");
 		}
 
 		$out = $this->_getNavigation($categoryId);
