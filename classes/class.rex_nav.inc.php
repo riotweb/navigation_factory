@@ -20,6 +20,9 @@ class rex_nav {
 	protected $showHasSubClass;
 	protected $hasSubClass;
 
+	protected $startLevelWasSet;
+	protected $startCategoryIdWasSet;
+
 	// old vars from rex_navigation
 	var $path = array();
 	var $callbacks = array();
@@ -45,6 +48,9 @@ class rex_nav {
 		$this->listItemClassFromCategoryId = array();
 		$this->showHasSubClass = false;
 		$this->hasSubClass = 'has-sub';
+
+		$this->startLevelWasSet = false;
+		$this->startCategoryIdWasSet = false;
 	}
 
 	public function getNavigation() {
@@ -53,6 +59,7 @@ class rex_nav {
 
 	public function setStartCategoryId($catId) {
 		$this->startCategoryId = $catId;
+		$this->startCategoryIdWasSet = true;
 	}
 
 	public function setStartLevel($startLevel) {
@@ -65,6 +72,8 @@ class rex_nav {
 		} else {
 			$this->startCategoryId = -1;
 		}
+
+		$this->startLevelWasSet = true;
 	}
 
 	public function setLevelCount($levelCount) {
@@ -310,6 +319,11 @@ class rex_nav {
 		}
 
 		$out = $this->_getNavigation($categoryId);
+
+		// show message if start level and start category were used
+		if ($this->startCategoryIdWasSet && $this->startLevelWasSet && rex_navigation_factory_utils::isBackendUserLoggedIn()) {
+			$out = "<div style='display: inline-block; padding: 3px; border: 1px solid #fff;'>rex_nav Class: don't use setStartLevel() and setStartCategoryId() at the same time!</div>" . PHP_EOL . $out;
+		}
 
 		// add has-sub
 		if ($this->showHasSubClass) {

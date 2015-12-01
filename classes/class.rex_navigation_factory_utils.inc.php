@@ -64,5 +64,28 @@ class rex_navigation_factory_utils {
 	public static function makeHeadlinePretty($md) {
 		return str_replace('Navigation Factory - ', '', $md);
 	}
+
+	public static function isBackendUserLoggedIn() {
+		global $REX, $I18N;
+
+		$loggedIn = false;
+
+		if (session_id() == '') {
+			session_start();
+		}
+
+		$loggedIn = isset($_SESSION[$REX['INSTNAME']]['UID']) && $_SESSION[$REX['INSTNAME']]['UID'] > 0;
+
+		if ($loggedIn && (!isset($REX['LOGIN']) || !is_object($REX['LOGIN']))) {
+			if (!is_object($I18N)) {
+				$I18N = rex_create_lang($REX['LANG']);
+			}
+
+			$REX['LOGIN'] = new rex_backend_login($REX['TABLE_PREFIX'] . 'user');
+			$loggedIn = $REX['LOGIN']->checkLogin();
+		}
+
+		return $loggedIn;
+	}
 }
 
