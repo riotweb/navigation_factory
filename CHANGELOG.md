@@ -6,6 +6,7 @@ Navigation Factory - Changelog
 * Fixed: Community Addon Permissions
 * Fixed #2: `has-sub` in `rex_nav` wird jetzt dem Li zugewiesen, thx@alexwenz
 * Neu: `setListMode()` zur `rex_breadcrumb_nav` hinzugefügt. Ergibt bei `false` eine reine Linkliste ohne ul/li's, thx@JeGr
+* Neu: Der PHP Simple HTML DOM Parser wurde dem Addon hinzugefügt und steht zur Benutzung bereit.
 * Verbessert: Bei gleichzeitiger Nutzung von `setStartLevel()` und `setStartCategoryId()` wird eine Warnung angezeigt
 
 ### Version 1.0.1 - 19. November 2015

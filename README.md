@@ -17,6 +17,7 @@ Features
 * Reagiert automatisch auf gesperrte Kategorien/Artikel etc. bei installiertem Community AddOn
 * Ausgabe einer einfachen Sprachnavigation möglich
 * Ausgabe einer Breadcrumb Navigation möglich
+* PHP Simple HTML DOM Parser inkludiert
 
 PHP Klassen
 ------------
@@ -29,6 +30,11 @@ Codebeispiele
 -------------
 
 Die Codebeispiele sind direkt im Addon als Menüpunkt aufrufbar. Alternativ sind diese auch im `docs` Ordner des Addons zu finden.
+
+PHP Simple HTML DOM Parser
+--------------------------
+
+Der [PHP Simple HTML DOM Parser](http://simplehtmldom.sourceforge.net/) ist Bestandteil des Navigation Factory Addons und kann auch ausserhalb des Addons verwendet werden. Die API Referenz ist hier zu finden: http://simplehtmldom.sourceforge.net/manual_api.htm
 
 Hinweise
 --------
@@ -50,3 +56,5 @@ Credits
 -------
 
 * [Parsedown](http://parsedown.org/) Class by Emanuil Rusev
+* [PHP Simple HTML DOM Parser](http://simplehtmldom.sourceforge.net/) by S.C. Chen
+* Icon von [simpleicon.com](http://simpleicon.com)
