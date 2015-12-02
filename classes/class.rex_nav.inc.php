@@ -321,8 +321,8 @@ class rex_nav {
 		$out = $this->_getNavigation($categoryId);
 
 		// show message if start level and start category were used
-		if ($this->startCategoryIdWasSet && $this->startLevelWasSet && rex_navigation_factory_utils::isBackendUserLoggedIn()) {
-			$out = "<div style='display: inline-block; padding: 3px; border: 1px solid #fff;'>rex_nav Class: don't use setStartLevel() and setStartCategoryId() at the same time!</div>" . PHP_EOL . $out;
+		if ($this->startCategoryIdWasSet && $this->startLevelWasSet) {
+			$out = "<div style='display: inline-block; padding: 3px; border: 1px solid #fff;'>rex_nav: don't use setStartLevel() and setStartCategoryId() at the same time!</div>" . PHP_EOL . $out;
 		}
 
 		// add has-sub
