@@ -340,7 +340,7 @@ class rex_nav {
 					}
 				}
 
-				$out = $html;
+				$out = $html->save();
 			}
 		}
 		
