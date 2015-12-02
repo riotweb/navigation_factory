@@ -1,7 +1,7 @@
 Navigation Factory - Changelog
 ==============================
 
-### Version 1.0.2 DEV
+### Version 1.1.0 - 02. Dezember 2015
 
 * Fixed: Community Addon Permissions
 * Fixed #2: `has-sub` in `rex_nav` wird jetzt dem Li zugewiesen, thx@alexwenz
