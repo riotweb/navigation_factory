@@ -107,7 +107,7 @@ class rex_breadcrumb_nav {
 
 					if (intval($id) === $REX['ARTICLE_ID']) {
 						$html .= $linkText;
-					} else {
+					} else if ( $linkText != '') {
 						$html .= '<a href="' . $article->getUrl() . '">' . $linkText . '</a>';
 					}
 
