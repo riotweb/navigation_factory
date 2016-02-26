@@ -2,7 +2,7 @@
 // init addon
 $REX['ADDON']['name']['navigation_factory'] = 'Navigation Factory';
 $REX['ADDON']['page']['navigation_factory'] = 'navigation_factory';
-$REX['ADDON']['version']['navigation_factory'] = '1.2.0 DEV';
+$REX['ADDON']['version']['navigation_factory'] = '1.1.1 DEV';
 $REX['ADDON']['author']['navigation_factory'] = 'RexDude';
 $REX['ADDON']['supportpage']['navigation_factory'] = 'forum.redaxo.org';
 $REX['ADDON']['perm']['navigation_factory'] = 'navigation_factory[]';

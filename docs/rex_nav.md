@@ -53,7 +53,7 @@ $nav->setHideWebsiteStartArticle(true); // startartikel der website wird ausgebl
 $nav->setHideIds(array(42, 108)); // kategorien mit ids 42 und 108 werden ausgeblendet
 $nav->setSelectedClass('current'); // li klasse für selektierte menüpunkte: 'current'
 $nav->setActiveClass('current active'); // li klasse für gerade aktiven menüpunkt: 'current active'
-$nav->setShowHasSubClass(true); // zeigt 'has-sub' klasse für die ul an
+$nav->setShowHasSubClass(true); // zeigt 'has-sub' klasse für die li an
 $nav->setHasSubClass('has-sub'); // klassenname der 'has-sub' klasse
 $nav->setListId('nav', 1); // erste ul id: 'nav'
 $nav->setListClass('sf-menu', 1); // erste ul klasse 'sf-menu'
