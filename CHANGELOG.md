@@ -1,6 +1,10 @@
 Navigation Factory - Changelog
 ==============================
 
+### Version 1.2.0 DEV
+
+* Fixed: RexSearch compat
+
 ### Version 1.1.0 - 02. Dezember 2015
 
 * Fixed: Community Addon Permissions

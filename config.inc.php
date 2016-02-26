@@ -2,7 +2,7 @@
 // init addon
 $REX['ADDON']['name']['navigation_factory'] = 'Navigation Factory';
 $REX['ADDON']['page']['navigation_factory'] = 'navigation_factory';
-$REX['ADDON']['version']['navigation_factory'] = '1.1.0';
+$REX['ADDON']['version']['navigation_factory'] = '1.2.0 DEV';
 $REX['ADDON']['author']['navigation_factory'] = 'RexDude';
 $REX['ADDON']['supportpage']['navigation_factory'] = 'forum.redaxo.org';
 $REX['ADDON']['perm']['navigation_factory'] = 'navigation_factory[]';
@@ -21,8 +21,10 @@ require($REX['INCLUDE_PATH'] . '/addons/navigation_factory/classes/class.rex_lan
 require($REX['INCLUDE_PATH'] . '/addons/navigation_factory/classes/class.rex_breadcrumb_nav.inc.php');
 require($REX['INCLUDE_PATH'] . '/addons/navigation_factory/classes/class.rex_navigation_factory_utils.inc.php');
 
-if (!class_exists('simple_html_dom_node')) {
-	require($REX['INCLUDE_PATH'] . '/addons/navigation_factory/classes/class.simple_html_dom.inc.php');
+if (rex_request('page') != 'addon') {
+	if (!class_exists('simple_html_dom_node') && !OOPlugin::isAvailable('rexsearch', 'plaintext')) {
+		require($REX['INCLUDE_PATH'] . '/addons/navigation_factory/classes/class.simple_html_dom.inc.php');
+	}
 }
 
 if ($REX['REDAXO']) {
