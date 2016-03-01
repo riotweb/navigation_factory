@@ -1,7 +1,7 @@
 Navigation Factory - Changelog
 ==============================
 
-### Version 1.1.1 DEV
+### Version 1.1.1 - 01. März 2016
 
 * Fixed #12: Home-Link nicht ausgeben wenn leer, thx@alexplusde
 * Fixed: RexSearch compat
