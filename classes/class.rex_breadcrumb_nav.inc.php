@@ -4,15 +4,18 @@ class rex_breadcrumb_nav {
 	protected $listMode;
 	protected $listId;
 	protected $listClass;
+	protected $AClass;
 	protected $orderedList;
 	protected $startArticleName;
 	protected $startArticleIconClass;
 	protected $hideStartArticleName;
+	
 
 	public function __construct() {
 		$this->listMode = true;
 		$this->listId = '';
 		$this->listClass = '';
+		$this->AClass = '';
 		$this->orderedList = false;
 		$this->startArticleName = '';
 		$this->startArticleIconClass = '';
@@ -29,6 +32,10 @@ class rex_breadcrumb_nav {
 
 	public function setListClass($listClass) {
 		$this->listClass = $listClass;
+	}
+	
+	public function setAClass($AClass) {
+		$this->AClass = $AClass;
 	}
 
 	public function setOrderedList($orderedList) {
@@ -69,6 +76,12 @@ class rex_breadcrumb_nav {
 		} else {
 			$listClassAttribute = '';
 		}
+		
+		if ($this->AClass !== '') {
+			$AClassAttribute = ' class="' . $this->AClass . '"';
+		} else {
+			$AClassAttribute = '';
+		}
 
 		if ($this->listMode) {
 			$html = '<' . $listType . $listIdAttribute . $listClassAttribute . '>';
@@ -108,7 +121,7 @@ class rex_breadcrumb_nav {
 					if (intval($id) === $REX['ARTICLE_ID']) {
 						$html .= $linkText;
 					} else if ( $linkText != '') {
-						$html .= '<a href="' . $article->getUrl() . '">' . $linkText . '</a>';
+						$html .= '<a href="' . $article->getUrl() . '" '. $AClassAttribute .'>' . $linkText . '</a>';
 					}
 
 					if ($this->listMode) {
